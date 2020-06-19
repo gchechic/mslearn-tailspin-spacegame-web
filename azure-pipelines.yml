@@ -60,7 +60,8 @@ steps:
     azureSubscription: 'DreamSpark(d357ff23-6dc7-41e6-9e63-a9061a174574)'
     appType: 'webApp'
     WebAppName: 'WebApi7025'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
